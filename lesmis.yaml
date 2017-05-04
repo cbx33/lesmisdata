@@ -1391,7 +1391,7 @@ scenes:
     fixtures:
       light1:
         values:
-          bright: {'mode': 'max', 'type': 'wave', 'amp': .5, 'name': 'battle', 'filename': '/home/psav/tmp/pyola/lescannon2.wav', 'master': True}
+          bright: {'mode': 'max', 'type': 'wave', 'amp': .5, 'name': 'battle', 'filename': 'lescannon2.wav', 'master': True}
           red: RED
           blue: RED
           green: RED
