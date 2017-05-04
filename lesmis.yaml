@@ -97,24 +97,27 @@ fixtures:
     type: minilight
     start_address: 113
 scenes:
-  1000 - crazy:
+  0000 - arazy:
+    auto_advance:
+      scene: 0001 - Look Down
+      time: 2
     fixtures:
       smoke1:
         values:
-          smoke: {'type': 'wii', 'initial': 0, chan: 1}
+          smoke: 0
       light1:
         values:
-          tilt: {'type': 'wii', 'initial': 0, chan: 0}
+          tilt: 0
           red: BLUE
           blue: BLUE
           green: BLUE
-          bright: {'type': 'wii', 'initial': 0, chan: 1}
+          bright: 0
       light2:
         values:
           red: GREEN
           blue: GREEN
-          green: {'type': 'wii', 'initial': 0, chan: 0}
-          bright: {'type': 'wii', 'initial': 0, chan: 1}
+          green: 0
+          bright: 0
       light3:
         inherit: light2
       light4:
@@ -181,7 +184,7 @@ scenes:
       minilight4:
         values:
           bright: 0
-  0001 - Look Down:
+  0010 - Look Down:
     inherit: 0000 - black
     default_trans: 10
     fixtures:
@@ -213,7 +216,7 @@ scenes:
       minilight4:
         values:
           bright: SPOT_BRIGHT
-  0002 - Bishops End:
+  0020 - Bishops End:
     default_trans: 5
     inherit: 0000 - black
     fixtures:
@@ -234,7 +237,51 @@ scenes:
         inherit: light2
       light4:
         inherit: light1
-  0003 - What Have I Done?:
+      minilight1:
+        values:
+          bright: SPOT_BRIGHT
+      minilight2:
+        values:
+          bright: 0
+      minilight3:
+        values:
+          bright: 0
+      minilight4:
+        values:
+          bright: 0
+  0021 - Bishops End:
+    default_trans: 1
+    inherit: 0020 - Bishops End
+    fixtures:
+      minilight1:
+        values:
+          bright: 0
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: 0
+  0022 - Bishops End:
+    default_trans: 1
+    inherit: 0020 - Bishops End
+    fixtures:
+      minilight1:
+        values:
+          bright: SPOT_BRIGHT
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: 0
+  0030 - What Have I Done?:
     default_trans: 10
     inherit: 0000 - black
     fixtures:
@@ -254,7 +301,19 @@ scenes:
         inherit: light2
       light4:
         inherit: light1
-  0003a - What Have I Done?:
+      minilight1:
+        values:
+          bright: 0
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: 0
+  0031 - What Have I Done?:
     default_trans: 10
     inherit: 0000 - black
     fixtures:
@@ -270,10 +329,41 @@ scenes:
         inherit: light1
       light4:
         inherit: light1
-  0003b - FTB:
+      minilight1:
+        values:
+          bright: 0
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: 0
+  0032 - What Have I Done? (FTB):
     inherit: 0000 - black
+    auto_advance:
+      scene: 0033 - What Have I Done? (FTB)
+      time: 0
     default_trans: 10
-  0004 - At the end of the day:
+    fixtures:
+      minilight1:
+        values:
+          bright: 0
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: 0
+  0033 - What Have I Done? (FTB):
+    inherit: 0000 - black
+    default_trans: 2
+  0040 - At the end of the day:
     default_trans: 10
     inherit: 0000 - black
     fixtures:
@@ -293,7 +383,19 @@ scenes:
         inherit: light2
       light4:
         inherit: light1
-  0005 - I dreamed a dream:
+      minilight1:
+        values:
+          bright: SPOT_BRIGHT
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: SPOT_BRIGHT
+  0050 - I dreamed a dream:
     default_trans: 10
     inherit: 0000 - black
     fixtures:
@@ -313,7 +415,19 @@ scenes:
           bright: MEDIUM_BRIGHT
       light4:
         inherit: light1
-  0005a - I dreamed a dream:
+      minilight1:
+        values:
+          bright: 0
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: 0
+  0051 - I dreamed a dream:
     default_trans: 10
     inherit: 0000 - black
     fixtures:
@@ -329,8 +443,23 @@ scenes:
         inherit: light1
       light4:
         inherit: light1
-  0005b - I dreamed a dream:
+      minilight1:
+        values:
+          bright: 0
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: 0
+  0052 - I dreamed a dream:
     default_trans: 30
+    auto_advance:
+      scene: 0053 - I dreamed a dream? (FTB)
+      time: 0
     inherit: 0000 - black
     fixtures:
       light1:
@@ -349,7 +478,38 @@ scenes:
           bright: MEDIUM_BRIGHT
       light4:
         inherit: light1
-  0006 - Lovely Ladies:
+      minilight1:
+        values:
+          bright: 0
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: 0
+  0053 - I dreamed a dream? (FTB):
+    default_trans: 2
+    auto_advance:
+      scene: 0053 - I dreamed a dream? (FTB)
+      time: 0
+    inherit: 0052 - I dreamed a dream
+    fixtures:
+      minilight1:
+        values:
+          bright: 0
+      minilight2:
+        values:
+          bright: 0
+      minilight3:
+        values:
+          bright: 0
+      minilight4:
+        values:
+          bright: 0
+  0060 - Lovely Ladies:
     default_trans: 5
     inherit: 0000 - black
     fixtures:
@@ -369,7 +529,19 @@ scenes:
         inherit: light2
       light4:
         inherit: light1
-  0007 - Fantine:
+      minilight1:
+        values:
+          bright: SPOT_BRIGHT
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: SPOT_BRIGHT
+  0070 - Fantine:
     default_trans: 10
     inherit: 0000 - black
     fixtures:
@@ -389,7 +561,19 @@ scenes:
           bright: MEDIUM_BRIGHT
       light4:
         inherit: light1
-  0007 - Who am I?:
+      minilight1:
+        values:
+          bright: 0
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: SPOT_BRIGHT
+  0080 - Who am I?:
     default_trans: 5
     inherit: 0000 - black
     fixtures:
@@ -409,7 +593,19 @@ scenes:
         inherit: light2
       light4:
         inherit: light1
-  0007a - Who am I?:
+      minilight1:
+        values:
+          bright: SPOT_BRIGHT
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: 0
+  0081 - Who am I?:
     default_trans: 5
     inherit: 0000 - black
     fixtures:
@@ -429,7 +625,19 @@ scenes:
         inherit: light2
       light4:
         inherit: light1
-  0007b - Who am I?:
+      minilight1:
+        values:
+          bright: 0
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: 0
+  0082 - Who am I?:
     default_trans: 5
     inherit: 0000 - black
     fixtures:
@@ -451,7 +659,19 @@ scenes:
         inherit: light2
       light4:
         inherit: light1
-  0008 - Come to me:
+      minilight1:
+        values:
+          bright: 0
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: 0
+  0090 - Come to me:
     default_trans: 10
     inherit: 0000 - black
     fixtures:
@@ -472,7 +692,19 @@ scenes:
         inherit: light2
       light4:
         inherit: light1
-  0009 - Confrontation:
+      minilight1:
+        values:
+          bright: 0
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: 0
+  0100 - Confrontation:
     default_trans: 10
     inherit: 0000 - black
     fixtures:
@@ -493,7 +725,19 @@ scenes:
         inherit: light2
       light4:
         inherit: light1
-  0010 - Castle on the cloud:
+      minilight1:
+        values:
+          bright: 0
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: 0
+  0110 - Castle on the cloud:
     default_trans: 10
     inherit: 0000 - black
     fixtures:
@@ -513,7 +757,19 @@ scenes:
         inherit: light2
       light4:
         inherit: light1
-  0011 - Master of the house:
+      minilight1:
+        values:
+          bright: 0
+      minilight2:
+        values:
+          bright: 0
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: 0
+  0120 - Master of the house:
     default_trans: 5
     inherit: 0000 - black
     fixtures:
@@ -534,7 +790,41 @@ scenes:
         inherit: light2
       light4:
         inherit: light1
-  0012 - Madame Thenardier:
+      minilight1:
+        values:
+          bright: 0
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: 0
+  0121 - Master of the house:
+    default_trans: 5
+    inherit: 0120 - Master of the house
+    fixtures:
+      minilight1:
+        values:
+          bright: 0
+      minilight2:
+        values:
+          bright: 0
+      minilight3:
+        values:
+          bright: 0
+      minilight4:
+        values:
+          bright: 0
+  0122 - Master of the house:
+    default_trans: 5
+    inherit: 0120 - Master of the house
+  0123 - Master of the house:
+    default_trans: 5
+    inherit: 0121 - Master of the house
+  0130 - Madame Thenardier:
     default_trans: 5
     inherit: 0000 - black
     fixtures:
@@ -550,7 +840,7 @@ scenes:
         inherit: light1
       light4:
         inherit: light1
-  0012a - Madame Thenardier:
+  0131 - Madame Thenardier:
     default_trans: 5
     inherit: 0000 - black
     fixtures:
@@ -571,7 +861,7 @@ scenes:
         inherit: light2
       light4:
         inherit: light1
-  0013 - Paris:
+  0140 - Paris:
     default_trans: 10
     inherit: 0000 - black
     fixtures:
@@ -591,7 +881,67 @@ scenes:
         inherit: light1
       light4:
         inherit: light2
-  0014 - The Assault:
+      minilight1:
+        values:
+          bright: 0
+      minilight2:
+        values:
+          bright: 0
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: 0
+  0141 - Paris:
+    default_trans: 4
+    inherit: 0140 - Paris
+    fixtures:
+      minilight1:
+        values:
+          bright: SPOT_BRIGHT
+      minilight2:
+        values:
+          bright: 0
+      minilight3:
+        values:
+          bright: 0
+      minilight4:
+        values:
+          bright: 0
+  0142 - Paris:
+    default_trans: 4
+    inherit: 0140 - Paris
+    fixtures:
+      minilight1:
+        values:
+          bright: 0
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: 0
+      minilight4:
+        values:
+          bright: SPOT_BRIGHT
+  0143 - Paris:
+    default_trans: 4
+    inherit: 0140 - Paris
+    fixtures:
+      minilight1:
+        values:
+          bright: 0
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: SPOT_BRIGHT
+  0150 - The Assault:
     default_trans: 5
     inherit: 0000 - black
     fixtures:
@@ -611,7 +961,51 @@ scenes:
         inherit: light2
       light4:
         inherit: light1
-  0015 - Stars:
+      minilight1:
+        values:
+          bright: 0
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: 0
+  0151 - The Assault:
+    default_trans: 1
+    inherit: 0150 - The Assault
+    fixtures:
+      minilight1:
+        values:
+          bright: 0
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: SPOT_BRIGHT
+  0152 - The Assault:
+    default_trans: 4
+    inherit: 0150 - The Assault
+    fixtures:
+      minilight1:
+        values:
+          bright: 0
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: 0
+  0160 - Stars:
     default_trans: 10
     inherit: 0000 - black
     fixtures:
@@ -631,10 +1025,41 @@ scenes:
           bright: LOW_BRIGHT
       light4:
         inherit: light1
-  0015a - FTB:
+      minilight1:
+        values:
+          bright: 0
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: 0
+  0161 - Stars (FTB):
+    auto_advance:
+      scene: 0162 - Stars (FTB)
+      time: 0
     inherit: 0000 - black
     default_trans: 15
-  0016 - Rebellion Plan:
+    fixtures:
+      minilight1:
+        values:
+          bright: 0
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: 0
+  0162 - Stars (FTB):
+    inherit: 0000 - black
+    default_trans: 5
+  0170 - Rebellion Plan:
     default_trans: 5
     inherit: 0000 - black
     fixtures:
@@ -655,10 +1080,22 @@ scenes:
         inherit: light2
       light4:
         inherit: light1
-  0017 - Red and black:
-    inherit: 0016 - Rebellion Plan
+      minilight1:
+        values:
+          bright: SPOT_BRIGHT
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: SPOT_BRIGHT
+  0180 - Red and black:
+    inherit: 0170 - Rebellion Plan
     default_trans: 10
-  0018 - Do you hear the people sing?:
+  0190 - Do you hear the people sing?:
     default_trans: 10
     inherit: 0000 - black
     fixtures:
@@ -679,7 +1116,19 @@ scenes:
         inherit: light2
       light4:
         inherit: light1
-  0019 - In my life:
+      minilight1:
+        values:
+          bright: SPOT_BRIGHT
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: SPOT_BRIGHT
+  0200 - In my life:
     default_trans: 10
     inherit: 0000 - black
     fixtures:
@@ -700,7 +1149,35 @@ scenes:
         inherit: light2
       light4:
         inherit: light1
-  0020 - A heart full of love:
+      minilight1:
+        values:
+          bright: 0
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: 0
+  0201 - In my life:
+    default_trans: 10
+    inherit: 0200 - In my life
+    fixtures:
+      minilight1:
+        values:
+          bright: 0
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: SPOT_BRIGHT
+  0210 - A heart full of love:
     default_trans: 10
     inherit: 0000 - black
     fixtures:
@@ -721,7 +1198,19 @@ scenes:
         inherit: light2
       light4:
         inherit: light1
-  0021 - One day more:
+      minilight1:
+        values:
+          bright: 0
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: SPOT_BRIGHT
+  0220 - One day more:
     default_trans: 10
     inherit: 0000 - black
     fixtures:
@@ -742,7 +1231,19 @@ scenes:
         inherit: light2
       light4:
         inherit: light1
-  0021a - One day more:
+      minilight1:
+        values:
+          bright: SPOT_BRIGHT
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: SPOT_BRIGHT
+  0221 - One day more:
     default_trans: 5
     inherit: 0000 - black
     fixtures:
@@ -758,7 +1259,19 @@ scenes:
         inherit: light1
       light4:
         inherit: light1
-  0021c - One day more:
+      minilight1:
+        values:
+          bright: SPOT_BRIGHT
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: SPOT_BRIGHT
+  0222 - One day more:
     default_trans: 5
     inherit: 0000 - black
     fixtures:
@@ -779,10 +1292,22 @@ scenes:
         inherit: light2
       light4:
         inherit: light1
-  0021d - FTB:
+      minilight1:
+        values:
+          bright: SPOT_BRIGHT
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: SPOT_BRIGHT
+  0223 - One day more (FTB):
     inherit: 0000 - black
     default_trans: 0.2
-  0022 - Marius Letter:
+  1010 - Marius Letter:
     default_trans: 10
     inherit: 0000 - black
     fixtures:
@@ -802,7 +1327,19 @@ scenes:
         inherit: light2
       light4:
         inherit: light1
-  0022a - Marius Letter:
+      minilight1:
+        values:
+          bright: 0
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: 0
+  1011 - Marius Letter:
     default_trans: 5
     inherit: 0000 - black
     fixtures:
@@ -822,7 +1359,19 @@ scenes:
         inherit: light2
       light4:
         inherit: light1
-  0023 - On my own:
+      minilight1:
+        values:
+          bright: 0
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: 0
+  1020 - On my own:
     default_trans: 10
     inherit: 0000 - black
     fixtures:
@@ -842,7 +1391,19 @@ scenes:
         inherit: light2
       light4:
         inherit: light1
-  0023a - On my own:
+      minilight1:
+        values:
+          bright: 0
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: 0
+  1021 - On my own:
     default_trans: 5
     inherit: 0000 - black
     fixtures:
@@ -862,7 +1423,19 @@ scenes:
         inherit: light2
       light4:
         inherit: light1
-  0023b - On my own:
+      minilight1:
+        values:
+          bright: 0
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: 0
+  1022 - On my own:
     default_trans: 20
     inherit: 0000 - black
     fixtures:
@@ -882,7 +1455,19 @@ scenes:
         inherit: light2
       light4:
         inherit: light1
-  0024 - A little fall of rain:
+      minilight1:
+        values:
+          bright: 0
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: 0
+  1030 - A little fall of rain:
     default_trans: 10
     inherit: 0000 - black
     fixtures:
@@ -902,7 +1487,19 @@ scenes:
         inherit: light2
       light4:
         inherit: light1
-  0024a - A little fall of rain:
+      minilight1:
+        values:
+          bright: 0
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: 0
+  1031 - A little fall of rain:
     default_trans: 5
     inherit: 0000 - black
     fixtures:
@@ -924,7 +1521,35 @@ scenes:
         inherit: light1
         values:
           bright: 0
-  0025 - Eponine's Fall:
+      minilight1:
+        values:
+          bright: 0
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: 0
+  1032 - A little fall of rain:
+    default_trans: 5
+    inherit: 1031 - A little fall of rain
+    fixtures:
+      minilight1:
+        values:
+          bright: 0
+      minilight2:
+        values:
+          bright: 0
+      minilight3:
+        values:
+          bright: 0
+      minilight4:
+        values:
+          bright: 0
+  1040 - Eponine's Fall:
     default_trans: 5
     inherit: 0000 - black
     fixtures:
@@ -946,10 +1571,22 @@ scenes:
         inherit: light1
         values:
           bright: 0
-  0025b - FTB:
+      minilight1:
+        values:
+          bright: 0
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: 0
+  1041 - Eponine's Fall (FTB):
     default_trans: 10
     inherit: 0000 - black
-  0026 - Valjean joins the Barricade:
+  1050 - Valjean joins the Barricade:
     default_trans: 5
     inherit: 0000 - black
     fixtures:
@@ -969,7 +1606,20 @@ scenes:
         inherit: light2
       light4:
         inherit: light1
-  0027 - Javert is spared:
+      minilight1:
+        values:
+          bright: SPOT_BRIGHT
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: SPOT_BRIGHT
+  # TODO BATTLE
+  1070 - Javert is spared:
     default_trans: 10
     inherit: 0000 - black
     fixtures:
@@ -989,7 +1639,20 @@ scenes:
         inherit: light2
       light4:
         inherit: light1
-  0028 - Drink with me:
+      minilight1:
+        values:
+          bright: 0
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: 0
+  # TODO gun
+  1080 - Drink with me:
     default_trans: 5
     inherit: 0000 - black
     fixtures:
@@ -1014,7 +1677,19 @@ scenes:
           green: BLUE
           bright: MEDIUM_BRIGHT
           white: 200
-  0029 - Bring him home:
+      minilight1:
+        values:
+          bright: SPOT_BRIGHT
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: SPOT_BRIGHT
+  1090 - Bring him home:
     default_trans: 5
     inherit: 0000 - black
     fixtures:
@@ -1035,10 +1710,22 @@ scenes:
         inherit: light2
       light4:
         inherit: light1
-  0030 - Bring him home (0000 - black):
+      minilight1:
+        values:
+          bright: 0
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: 0
+  1091 - Bring him home (FTB):
     inherit: 0000 - black
     default_trans: 15
-  0031 - Barricades fall:
+  1100 - Barricades fall:
     default_trans: 5
     inherit: 0000 - black
     fixtures:
@@ -1058,7 +1745,51 @@ scenes:
         inherit: light2
       light4:
         inherit: light1
-  0031a - Barricades fall (madness):
+      minilight1:
+        values:
+          bright: SPOT_BRIGHT
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: 0
+  1101 - Barricades fall:
+    default_trans: 5
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          red: PURPLE
+          blue: PURPLE
+          green: PURPLE
+          bright: MAX_BRIGHT
+      light2:
+        values:
+          red: WHITE
+          blue: WHITE
+          green: WHITE
+          bright: MEDIUM_BRIGHT
+      light3:
+        inherit: light2
+      light4:
+        inherit: light1
+      minilight1:
+        values:
+          bright: 0
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: 0
+  1102 - Barricades fall (madness):
     default_trans: 0
     inherit: 0000 - black
     fixtures:
@@ -1094,27 +1825,11 @@ scenes:
           green: WHITE
           tilt: {'type': 'sin', 'freq': .6, 'amp': 40, 'initial': TILT_CENTER}
           pan: {'type': 'cos', 'freq': .4, 'amp': 180, 'initial': 0}
-  0031b - Barricades fall (big flash):
-    default_trans: 0
-    inherit: 0000 - black
-    fixtures:
-      light1:
-        values:
-          tilt: TILT_CENTER
-          red: WHITE
-          blue: WHITE
-          green: WHITE
-          bright: {'type': 'spline', 'points': [[0,0],[.1,255],[.75,0],[10000,0]], 'initial': 0}
-      light2:
-        inherit: light1
-      light3:
-        inherit: light1
-      light4:
-        inherit: light1
-  0031c - FTB:
+  1103 - FTB:
     inherit: 0000 - black
     default_trans: 0
-  0032 - Marius Rescued:
+  #TODO eend dying 2413
+  1110 - Marius Rescued:
     default_trans: 10
     inherit: 0000 - black
     fixtures:
@@ -1134,7 +1849,7 @@ scenes:
         inherit: light2
       light4:
         inherit: light1
-  0033 - Who is this man?:
+  1120 - Who is this man?:
     default_trans: 5
     inherit: 0000 - black
     fixtures:
@@ -1154,10 +1869,41 @@ scenes:
         inherit: light2
       light4:
         inherit: light1
-  0033a - FTB:
+      minilight1:
+        values:
+          bright: 0
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: 0
+  1121 - Who is this man? (FTB):
+    auto_advance:
+      scene: 1122 - Who is this man? (FTB)
+      time: 0
     inherit: 0000 - black
     default_trans: 15
-  0034 - Turning through the years:
+    fixtures:
+      minilight1:
+        values:
+          bright: 0
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: 0
+  1122 - Who is this man? (FTB):
+    inherit: 0000 - black
+    default_trans: 5
+  1130 - Turning through the years:
     default_trans: 5
     inherit: 0000 - black
     fixtures:
@@ -1177,7 +1923,19 @@ scenes:
         inherit: light2
       light4:
         inherit: light1
-  0035 - Empty chairs, empty tables:
+      minilight1:
+        values:
+          bright: SPOT_BRIGHT
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: SPOT_BRIGHT
+  1140 - Empty chairs, empty tables:
     default_trans: 10
     inherit: 0000 - black
     fixtures:
@@ -1198,7 +1956,19 @@ scenes:
         inherit: light2
       light4:
         inherit: light1
-  0035a - Empty chairs, empty tables:
+      minilight1:
+        values:
+          bright: 0
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: 0
+  1141 - Empty chairs, empty tables:
     default_trans: 5
     inherit: 0000 - black
     fixtures:
@@ -1218,7 +1988,19 @@ scenes:
         inherit: light2
       light4:
         inherit: light1
-  0036 - A heart full of love:
+      minilight1:
+        values:
+          bright: 0
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: 0
+  1150 - A heart full of love:
     default_trans: 10
     inherit: 0000 - black
     fixtures:
@@ -1239,7 +2021,35 @@ scenes:
         inherit: light2
       light4:
         inherit: light1
-  0037 - Wedding Day Peal:
+      minilight1:
+        values:
+          bright: 0
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: 0
+  1151 - A heart full of love:
+    default_trans: 3
+    inherit: 1150 - A heart full of love
+    fixtures:
+      minilight1:
+        values:
+          bright: SPOT_BRIGHT
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: 0
+  1160 - Wedding Day Peal:
     default_trans: 10
     inherit: 0000 - black
     fixtures:
@@ -1259,7 +2069,19 @@ scenes:
         inherit: light2
       light4:
         inherit: light1
-  0038 - Baron and Baroness:
+      minilight1:
+        values:
+          bright: 0
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: 0
+  1170 - Baron and Baroness:
     default_trans: 5
     inherit: 0000 - black
     fixtures:
@@ -1280,7 +2102,19 @@ scenes:
         inherit: light2
       light4:
         inherit: light1
-  0039 - Wedding Night Prayer:
+      minilight1:
+        values:
+          bright: 0
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: 0
+  1180 - Wedding Night Prayer:
     default_trans: 10
     inherit: 0000 - black
     fixtures:
@@ -1300,7 +2134,51 @@ scenes:
         inherit: light2
       light4:
         inherit: light1
-  0040 - Confession:
+      minilight1:
+        values:
+          bright: 0
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: 0
+  1181 - Wedding Night Prayer:
+    default_trans: 3
+    inherit: 1180 - Wedding Night Prayer
+    fixtures:
+      minilight1:
+        values:
+          bright: SPOT_BRIGHT
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: 0
+  1182 - Wedding Night Prayer:
+    default_trans: 3
+    inherit: 1180 - Wedding Night Prayer
+    fixtures:
+      minilight1:
+        values:
+          bright: SPOT_BRIGHT
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: SPOT_BRIGHT
+  1190 - Confession:
     default_trans: 5
     inherit: 0000 - black
     fixtures:
@@ -1320,7 +2198,19 @@ scenes:
         inherit: light2
       light4:
         inherit: light1
-  0040a - Confession:
+      minilight1:
+        values:
+          bright: SPOT_BRIGHT
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: SPOT_BRIGHT
+  1200 - Confession:
     default_trans: 10
     inherit: 0000 - black
     fixtures:
@@ -1340,7 +2230,19 @@ scenes:
         inherit: light2
       light4:
         inherit: light1
-  0041 - Do you hear the people sing:
+      minilight1:
+        values:
+          bright: SPOT_BRIGHT
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: SPOT_BRIGHT
+  1210 - Do you hear the people sing:
     default_trans: 10
     inherit: 0000 - black
     fixtures:
@@ -1356,7 +2258,19 @@ scenes:
         inherit: light1
       light4:
         inherit: light1
-  0041a - Do you hear the people sing (France):
+      minilight1:
+        values:
+          bright: SPOT_BRIGHT
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: SPOT_BRIGHT
+  1211 - Do you hear the people sing (France):
     default_trans: 10
     inherit: 0000 - black
     fixtures:
@@ -1382,7 +2296,19 @@ scenes:
           blue: RED
           green: RED
           bright: MAX_BRIGHT
-  0041b - Do you hear the people sing (FTB):
+      minilight1:
+        values:
+          bright: SPOT_BRIGHT
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: SPOT_BRIGHT
+  1212 - Do you hear the people sing (FTB):
     default_trans: 5
     inherit: 0000 - black
   0090a - Testing:
