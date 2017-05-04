@@ -1,0 +1,1399 @@
+start_scene: 0000 - black
+constants:
+  LOW_SMOKE: 10
+  TILT_CENTER: 100
+  TILT_MID: 110
+  TILT_HIGH: 120
+  MAX_BRIGHT: 255
+  MEDIUM_BRIGHT: 150
+  LOW_BRIGHT: 90
+  SPOT_BRIGHT: 255
+  BLUE:
+    red: 0
+    green: 0
+    blue: 255
+  BLUE_WHITE:
+    red: 150
+    green: 150
+    blue: 255
+  YELLOW:
+    red: 255
+    green: 212
+    blue: 42
+  ORANGE:
+    red: 255
+    green: 102
+    blue: 0
+  WHITE:
+    red: 255
+    green: 255
+    blue: 255
+  RED:
+    red: 255
+    green: 0
+    blue: 0
+  GREEN:
+    red: 68
+    green: 170
+    blue: 0
+  PINK:
+    red: 255
+    green: 128
+    blue: 178
+  PURPLE:
+    red: 171
+    green: 55
+    blue: 200
+  CYAN:
+    red: 42
+    green: 212
+    blue: 255
+fixture_types:
+  light:
+    address_length: 8
+    chans:
+      pan: 1
+      tilt: 2
+      spd: 3
+      bright: 4
+      red: 5
+      green: 6
+      blue: 7
+      white: 8
+  smoke:
+    address_length: 1
+    chans:
+      smoke: 1
+  minilight:
+    address_length: 16
+    chans:
+      bright: 1
+fixtures:
+  light1:
+    type: light
+    start_address: 1
+  light2:
+    type: light
+    start_address: 17
+  light3:
+    type: light
+    start_address: 33
+  light4:
+    type: light
+    start_address: 49
+  smoke1:
+    type: smoke
+    start_address: 128
+  minilight1:
+    type: minilight
+    start_address: 65
+  minilight2:
+    type: minilight
+    start_address: 81
+  minilight3:
+    type: minilight
+    start_address: 97
+  minilight4:
+    type: minilight
+    start_address: 113
+scenes:
+  1000 - crazy:
+    fixtures:
+      smoke1:
+        values:
+          smoke: {'type': 'wii', 'initial': 0, chan: 1}
+      light1:
+        values:
+          tilt: {'type': 'wii', 'initial': 0, chan: 0}
+          red: BLUE
+          blue: BLUE
+          green: BLUE
+          bright: {'type': 'wii', 'initial': 0, chan: 1}
+      light2:
+        values:
+          red: GREEN
+          blue: GREEN
+          green: {'type': 'wii', 'initial': 0, chan: 0}
+          bright: {'type': 'wii', 'initial': 0, chan: 1}
+      light3:
+        inherit: light2
+      light4:
+        inherit: light1
+  0000 - smoke:
+    fixtures:
+      smoke1:
+        values:
+          smoke: LOW_SMOKE
+  0000 - black:
+    fixtures:
+      smoke1:
+        values:
+          smoke: 0
+      light1:
+        values:
+          pan: 0
+          tilt: TILT_CENTER
+          spd: 20
+          bright: 0
+          red: 0
+          green: 0
+          blue: 0
+          white: 0
+      light2:
+        values:
+          pan: 0
+          tilt: TILT_CENTER
+          spd: 20
+          bright: 0
+          red: 0
+          green: 0
+          blue: 0
+          white: 0
+      light3:
+        values:
+          pan: 0
+          tilt: TILT_CENTER
+          spd: 20
+          bright: 0
+          red: 0
+          green: 0
+          blue: 0
+          white: 0
+      light4:
+        values:
+          pan: 0
+          tilt: TILT_CENTER
+          spd: 20
+          bright: 0
+          red: 0
+          green: 0
+          blue: 0
+          white: 0
+      minilight1:
+        values:
+          bright: 0
+      minilight2:
+        values:
+          bright: 0
+      minilight3:
+        values:
+          bright: 0
+      minilight4:
+        values:
+          bright: 0
+  0001 - Look Down:
+    inherit: 0000 - black
+    default_trans: 10
+    fixtures:
+      light1:
+        values:
+          red: BLUE
+          blue: BLUE
+          green: BLUE
+          bright: MEDIUM_BRIGHT
+      light2:
+        values:
+          red: WHITE
+          blue: WHITE
+          green: WHITE
+          bright: MEDIUM_BRIGHT
+      light3:
+        inherit: light2
+      light4:
+        inherit: light1
+      minilight1:
+        values:
+          bright: SPOT_BRIGHT
+      minilight2:
+        values:
+          bright: SPOT_BRIGHT
+      minilight3:
+        values:
+          bright: SPOT_BRIGHT
+      minilight4:
+        values:
+          bright: SPOT_BRIGHT
+  0002 - Bishops End:
+    default_trans: 5
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          tilt: TILT_HIGH
+          red: BLUE
+          blue: BLUE
+          green: BLUE
+          bright: MEDIUM_BRIGHT
+      light2:
+        values:
+          red: GREEN
+          blue: GREEN
+          green: GREEN
+          bright: MEDIUM_BRIGHT
+      light3:
+        inherit: light2
+      light4:
+        inherit: light1
+  0003 - What Have I Done?:
+    default_trans: 10
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          red: ORANGE
+          blue: ORANGE
+          green: ORANGE
+          bright: 0
+      light2:
+        values:
+          red: ORANGE
+          blue: ORANGE
+          green: ORANGE
+          bright: MEDIUM_BRIGHT
+      light3:
+        inherit: light2
+      light4:
+        inherit: light1
+  0003a - What Have I Done?:
+    default_trans: 10
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          red: ORANGE
+          blue: ORANGE
+          green: ORANGE
+          bright: MEDIUM_BRIGHT
+      light2:
+        inherit: light1
+      light3:
+        inherit: light1
+      light4:
+        inherit: light1
+  0003b - FTB:
+    inherit: 0000 - black
+    default_trans: 10
+  0004 - At the end of the day:
+    default_trans: 10
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          red: ORANGE
+          blue: ORANGE
+          green: ORANGE
+          bright: MEDIUM_BRIGHT
+      light2:
+        values:
+          red: WHITE
+          blue: WHITE
+          green: WHITE
+          bright: MEDIUM_BRIGHT
+      light3:
+        inherit: light2
+      light4:
+        inherit: light1
+  0005 - I dreamed a dream:
+    default_trans: 10
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          red: BLUE
+          blue: BLUE
+          green: BLUE
+          bright: MEDIUM_BRIGHT
+      light2:
+        inherit: light1
+      light3:
+        values:
+          red: WHITE
+          blue: WHITE
+          green: WHITE
+          bright: MEDIUM_BRIGHT
+      light4:
+        inherit: light1
+  0005a - I dreamed a dream:
+    default_trans: 10
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          red: PINK
+          blue: PINK
+          green: PINK
+          bright: LOW_BRIGHT
+      light2:
+        inherit: light1
+      light3:
+        inherit: light1
+      light4:
+        inherit: light1
+  0005b - I dreamed a dream:
+    default_trans: 30
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          red: PINK
+          blue: PINK
+          green: PINK
+          bright: 0
+      light2:
+        inherit: light1
+      light3:
+        values:
+          red: PINK
+          blue: PINK
+          green: PINK
+          bright: MEDIUM_BRIGHT
+      light4:
+        inherit: light1
+  0006 - Lovely Ladies:
+    default_trans: 5
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          red: PINK
+          blue: PINK
+          green: PINK
+          bright: MEDIUM_BRIGHT
+      light2:
+        values:
+          red: PURPLE
+          blue: PURPLE
+          green: PURPLE
+          bright: MEDIUM_BRIGHT
+      light3:
+        inherit: light2
+      light4:
+        inherit: light1
+  0007 - Fantine:
+    default_trans: 10
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          red: BLUE
+          blue: BLUE
+          green: BLUE
+          bright: MEDIUM_BRIGHT
+      light2:
+        inherit: light1
+      light3:
+        values:
+          red: PURPLE
+          blue: PURPLE
+          green: PURPLE
+          bright: MEDIUM_BRIGHT
+      light4:
+        inherit: light1
+  0007 - Who am I?:
+    default_trans: 5
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          red: BLUE
+          blue: BLUE
+          green: BLUE
+          bright: MEDIUM_BRIGHT
+      light2:
+        values:
+          red: WHITE
+          blue: WHITE
+          green: WHITE
+          bright: MEDIUM_BRIGHT
+      light3:
+        inherit: light2
+      light4:
+        inherit: light1
+  0007a - Who am I?:
+    default_trans: 5
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          red: YELLOW
+          blue: YELLOW
+          green: YELLOW
+          bright: MEDIUM_BRIGHT
+      light2:
+        values:
+          red: WHITE
+          blue: WHITE
+          green: WHITE
+          bright: MEDIUM_BRIGHT
+      light3:
+        inherit: light2
+      light4:
+        inherit: light1
+  0007b - Who am I?:
+    default_trans: 5
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          red: YELLOW
+          blue: YELLOW
+          green: YELLOW
+          white: 100
+          bright: MAX_BRIGHT
+      light2:
+        values:
+          red: ORANGE
+          blue: ORANGE
+          green: ORANGE
+          white: 100
+          bright: MAX_BRIGHT
+      light3:
+        inherit: light2
+      light4:
+        inherit: light1
+  0008 - Come to me:
+    default_trans: 10
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          red: BLUE
+          blue: BLUE
+          green: BLUE
+          bright: MEDIUM_BRIGHT
+      light2:
+        values:
+          tilt: 70
+          red: PURPLE
+          blue: PURPLE
+          green: PURPLE
+          bright: MEDIUM_BRIGHT
+      light3:
+        inherit: light2
+      light4:
+        inherit: light1
+  0009 - Confrontation:
+    default_trans: 10
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          tilt: TILT_HIGH
+          red: BLUE
+          blue: BLUE
+          green: BLUE
+          bright: MEDIUM_BRIGHT
+      light2:
+        values:
+          red: WHITE
+          blue: WHITE
+          green: WHITE
+          bright: MEDIUM_BRIGHT
+      light3:
+        inherit: light2
+      light4:
+        inherit: light1
+  0010 - Castle on the cloud:
+    default_trans: 10
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          red: GREEN
+          blue: GREEN
+          green: GREEN
+          bright: MEDIUM_BRIGHT
+      light2:
+        values:
+          red: WHITE
+          blue: WHITE
+          green: WHITE
+          bright: MEDIUM_BRIGHT
+      light3:
+        inherit: light2
+      light4:
+        inherit: light1
+  0011 - Master of the house:
+    default_trans: 5
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          tilt: TILT_HIGH
+          red: ORANGE
+          blue: ORANGE
+          green: ORANGE
+          bright: MEDIUM_BRIGHT
+      light2:
+        values:
+          red: WHITE
+          blue: WHITE
+          green: WHITE
+          bright: MEDIUM_BRIGHT
+      light3:
+        inherit: light2
+      light4:
+        inherit: light1
+  0012 - Madame Thenardier:
+    default_trans: 5
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          red: PURPLE
+          blue: PURPLE
+          green: PURPLE
+          bright: MEDIUM_BRIGHT
+      light2:
+        inherit: light1
+      light3:
+        inherit: light1
+      light4:
+        inherit: light1
+  0012a - Madame Thenardier:
+    default_trans: 5
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          tilt: TILT_HIGH
+          red: ORANGE
+          blue: ORANGE
+          green: ORANGE
+          bright: MEDIUM_BRIGHT
+      light2:
+        values:
+          red: WHITE
+          blue: WHITE
+          green: WHITE
+          bright: MEDIUM_BRIGHT
+      light3:
+        inherit: light2
+      light4:
+        inherit: light1
+  0013 - Paris:
+    default_trans: 10
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          red: YELLOW
+          blue: YELLOW
+          green: YELLOW
+          bright: MEDIUM_BRIGHT
+      light2:
+        values:
+          red: ORANGE
+          blue: ORANGE
+          green: ORANGE
+          bright: MEDIUM_BRIGHT
+      light3:
+        inherit: light1
+      light4:
+        inherit: light2
+  0014 - The Assault:
+    default_trans: 5
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          red: BLUE
+          blue: BLUE
+          green: BLUE
+          bright: MEDIUM_BRIGHT
+      light2:
+        values:
+          red: CYAN
+          blue: CYAN
+          green: CYAN
+          bright: MAX_BRIGHT
+      light3:
+        inherit: light2
+      light4:
+        inherit: light1
+  0015 - Stars:
+    default_trans: 10
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          red: BLUE
+          blue: BLUE
+          green: BLUE
+          bright: LOW_BRIGHT
+      light2:
+        inherit: light1
+      light3:
+        values:
+          red: WHITE
+          blue: WHITE
+          green: WHITE
+          bright: LOW_BRIGHT
+      light4:
+        inherit: light1
+  0015a - FTB:
+    inherit: 0000 - black
+    default_trans: 15
+  0016 - Rebellion Plan:
+    default_trans: 5
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          tilt: TILT_MID
+          red: ORANGE
+          blue: ORANGE
+          green: ORANGE
+          bright: MEDIUM_BRIGHT
+      light2:
+        values:
+          red: WHITE
+          blue: WHITE
+          green: WHITE
+          bright: MEDIUM_BRIGHT
+      light3:
+        inherit: light2
+      light4:
+        inherit: light1
+  0017 - Red and black:
+    inherit: 0016 - Rebellion Plan
+    default_trans: 10
+  0018 - Do you hear the people sing?:
+    default_trans: 10
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          tilt: TILT_HIGH
+          red: BLUE
+          blue: BLUE
+          green: BLUE
+          bright: MEDIUM_BRIGHT
+      light2:
+        values:
+          red: WHITE
+          blue: WHITE
+          green: WHITE
+          bright: MEDIUM_BRIGHT
+      light3:
+        inherit: light2
+      light4:
+        inherit: light1
+  0019 - In my life:
+    default_trans: 10
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          tilt: TILT_MID
+          red: ORANGE
+          blue: ORANGE
+          green: ORANGE
+          bright: MEDIUM_BRIGHT
+      light2:
+        values:
+          red: WHITE
+          blue: WHITE
+          green: WHITE
+          bright: LOW_BRIGHT
+      light3:
+        inherit: light2
+      light4:
+        inherit: light1
+  0020 - A heart full of love:
+    default_trans: 10
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          tilt: TILT_MID
+          red: ORANGE
+          blue: ORANGE
+          green: ORANGE
+          bright: MEDIUM_BRIGHT
+      light2:
+        values:
+          red: WHITE
+          blue: WHITE
+          green: WHITE
+          bright: LOW_BRIGHT
+      light3:
+        inherit: light2
+      light4:
+        inherit: light1
+  0021 - One day more:
+    default_trans: 10
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          tilt: TILT_MID
+          red: ORANGE
+          blue: ORANGE
+          green: ORANGE
+          bright: MEDIUM_BRIGHT
+      light2:
+        values:
+          red: WHITE
+          blue: WHITE
+          green: WHITE
+          bright: LOW_BRIGHT
+      light3:
+        inherit: light2
+      light4:
+        inherit: light1
+  0021a - One day more:
+    default_trans: 5
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          red: WHITE
+          blue: WHITE
+          green: WHITE
+          bright: MEDIUM_BRIGHT
+      light2:
+        inherit: light1
+      light3:
+        inherit: light1
+      light4:
+        inherit: light1
+  0021c - One day more:
+    default_trans: 5
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          tilt: TILT_HIGH
+          red: RED
+          blue: RED
+          green: RED
+          bright: MEDIUM_BRIGHT
+      light2:
+        values:
+          red: WHITE
+          blue: WHITE
+          green: WHITE
+          bright: LOW_BRIGHT
+      light3:
+        inherit: light2
+      light4:
+        inherit: light1
+  0021d - FTB:
+    inherit: 0000 - black
+    default_trans: 0.2
+  0022 - Marius Letter:
+    default_trans: 10
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          red: PURPLE
+          blue: PURPLE
+          green: PURPLE
+          bright: MEDIUM_BRIGHT
+      light2:
+        values:
+          red: WHITE
+          blue: WHITE
+          green: WHITE
+          bright: MEDIUM_BRIGHT
+      light3:
+        inherit: light2
+      light4:
+        inherit: light1
+  0022a - Marius Letter:
+    default_trans: 5
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          red: RED
+          blue: RED
+          green: RED
+          bright: MEDIUM_BRIGHT
+      light2:
+        values:
+          red: ORANGE
+          blue: ORANGE
+          green: ORANGE
+          bright: MEDIUM_BRIGHT
+      light3:
+        inherit: light2
+      light4:
+        inherit: light1
+  0023 - On my own:
+    default_trans: 10
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          red: RED
+          blue: RED
+          green: RED
+          bright: MEDIUM_BRIGHT
+      light2:
+        values:
+          red: GREEN
+          blue: GREEN
+          green: GREEN
+          bright: MEDIUM_BRIGHT
+      light3:
+        inherit: light2
+      light4:
+        inherit: light1
+  0023a - On my own:
+    default_trans: 5
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          red: BLUE
+          blue: BLUE
+          green: BLUE
+          bright: MEDIUM_BRIGHT
+      light2:
+        values:
+          red: GREEN
+          blue: GREEN
+          green: GREEN
+          bright: MEDIUM_BRIGHT
+      light3:
+        inherit: light2
+      light4:
+        inherit: light1
+  0023b - On my own:
+    default_trans: 20
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          red: BLUE
+          blue: BLUE
+          green: BLUE
+          bright: 0
+      light2:
+        values:
+          red: ORANGE
+          blue: ORANGE
+          green: ORANGE
+          bright: MAX_BRIGHT
+      light3:
+        inherit: light2
+      light4:
+        inherit: light1
+  0024 - A little fall of rain:
+    default_trans: 10
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          red: RED
+          blue: RED
+          green: RED
+          bright: MEDIUM_BRIGHT
+      light2:
+        values:
+          red: WHITE
+          blue: WHITE
+          green: WHITE
+          bright: MEDIUM_BRIGHT
+      light3:
+        inherit: light2
+      light4:
+        inherit: light1
+  0024a - A little fall of rain:
+    default_trans: 5
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          red: RED
+          blue: RED
+          green: RED
+          bright: 0
+      light2:
+        inherit: light1
+      light3:
+        values:
+          red: WHITE
+          blue: WHITE
+          green: WHITE
+          bright: MEDIUM_BRIGHT
+      light4:
+        inherit: light1
+        values:
+          bright: 0
+  0025 - Eponine's Fall:
+    default_trans: 5
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          red: RED
+          blue: RED
+          green: RED
+          bright: 0
+      light2:
+        inherit: light1
+      light3:
+        values:
+          red: WHITE
+          blue: WHITE
+          green: WHITE
+          bright: MEDIUM_BRIGHT
+      light4:
+        inherit: light1
+        values:
+          bright: 0
+  0025b - FTB:
+    default_trans: 10
+    inherit: 0000 - black
+  0026 - Valjean joins the Barricade:
+    default_trans: 5
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          red: RED
+          blue: RED
+          green: RED
+          bright: MEDIUM_BRIGHT
+      light2:
+        values:
+          red: WHITE
+          blue: WHITE
+          green: WHITE
+          bright: MEDIUM_BRIGHT
+      light3:
+        inherit: light2
+      light4:
+        inherit: light1
+  0027 - Javert is spared:
+    default_trans: 10
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          red: BLUE
+          blue: BLUE
+          green: BLUE
+          bright: MEDIUM_BRIGHT
+      light2:
+        values:
+          red: WHITE
+          blue: WHITE
+          green: WHITE
+          bright: MEDIUM_BRIGHT
+      light3:
+        inherit: light2
+      light4:
+        inherit: light1
+  0028 - Drink with me:
+    default_trans: 5
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          red: BLUE
+          blue: BLUE
+          green: BLUE
+          bright: MEDIUM_BRIGHT
+      light2:
+        values:
+          red: WHITE
+          blue: WHITE
+          green: WHITE
+          bright: MEDIUM_BRIGHT
+      light3:
+        inherit: light2
+      light4:
+        values:
+          red: BLUE
+          blue: BLUE
+          green: BLUE
+          bright: MEDIUM_BRIGHT
+          white: 200
+  0029 - Bring him home:
+    default_trans: 5
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          tilt: TILT_HIGH
+          red: BLUE
+          blue: BLUE
+          green: BLUE
+          bright: MEDIUM_BRIGHT
+      light2:
+        values:
+          red: WHITE
+          blue: WHITE
+          green: WHITE
+          bright: MEDIUM_BRIGHT
+      light3:
+        inherit: light2
+      light4:
+        inherit: light1
+  0030 - Bring him home (0000 - black):
+    inherit: 0000 - black
+    default_trans: 15
+  0031 - Barricades fall:
+    default_trans: 5
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          red: PURPLE
+          blue: PURPLE
+          green: PURPLE
+          bright: MAX_BRIGHT
+      light2:
+        values:
+          red: WHITE
+          blue: WHITE
+          green: WHITE
+          bright: MEDIUM_BRIGHT
+      light3:
+        inherit: light2
+      light4:
+        inherit: light1
+  0031a - Barricades fall (madness):
+    default_trans: 0
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          bright: {'type': 'random', 'prob': .02, 'duration': .07, 'initial': 0, max: 255}
+          red: RED
+          blue: RED
+          green: RED
+          tilt: {'type': 'sin', 'freq': .3, 'amp': 40, 'initial': TILT_CENTER}
+          pan: {'type': 'cos', 'freq': .8, 'amp': 180, 'initial': 0}
+      light2:
+        values:
+          bright: {'type': 'random', 'prob': .01, 'duration': .05, 'initial': 0, max: 255}
+          red: ORANGE
+          blue: ORANGE
+          green: ORANGE
+          tilt: {'type': 'cos', 'freq': 1, 'amp': 40, 'initial': TILT_CENTER}
+          pan: {'type': 'sin', 'freq': .3, 'amp': 180, 'initial': 0}
+      light3:
+        values:
+          bright: {'type': 'random', 'prob': .02, 'duration': .03, 'initial': 0, max: 255}
+          red: RED
+          blue: RED
+          green: RED
+          tilt: {'type': 'cos', 'freq': 1.2, 'amp': 40, 'initial': TILT_CENTER}
+          pan: {'type': 'sin', 'freq': .8, 'amp': 180, 'initial': 0}
+      light4:
+        values:
+          bright: {'type': 'random', 'prob': .01, 'duration': .05, 'initial': 0, max: 255}
+          red: WHITE
+          blue: WHITE
+          green: WHITE
+          tilt: {'type': 'sin', 'freq': .6, 'amp': 40, 'initial': TILT_CENTER}
+          pan: {'type': 'cos', 'freq': .4, 'amp': 180, 'initial': 0}
+  0031b - Barricades fall (big flash):
+    default_trans: 0
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          tilt: TILT_CENTER
+          red: WHITE
+          blue: WHITE
+          green: WHITE
+          bright: {'type': 'spline', 'points': [[0,0],[.1,255],[.75,0],[10000,0]], 'initial': 0}
+      light2:
+        inherit: light1
+      light3:
+        inherit: light1
+      light4:
+        inherit: light1
+  0031c - FTB:
+    inherit: 0000 - black
+    default_trans: 0
+  0032 - Marius Rescued:
+    default_trans: 10
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          red: GREEN
+          blue: GREEN
+          green: GREEN
+          bright: MEDIUM_BRIGHT
+      light2:
+        values:
+          red: WHITE
+          blue: WHITE
+          green: WHITE
+          bright: MEDIUM_BRIGHT
+      light3:
+        inherit: light2
+      light4:
+        inherit: light1
+  0033 - Who is this man?:
+    default_trans: 5
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          red: BLUE
+          blue: BLUE
+          green: BLUE
+          bright: MEDIUM_BRIGHT
+      light2:
+        values:
+          red: WHITE
+          blue: WHITE
+          green: WHITE
+          bright: MEDIUM_BRIGHT
+      light3:
+        inherit: light2
+      light4:
+        inherit: light1
+  0033a - FTB:
+    inherit: 0000 - black
+    default_trans: 15
+  0034 - Turning through the years:
+    default_trans: 5
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          red: BLUE
+          blue: BLUE
+          green: BLUE
+          bright: MEDIUM_BRIGHT
+      light2:
+        values:
+          red: WHITE
+          blue: WHITE
+          green: WHITE
+          bright: MEDIUM_BRIGHT
+      light3:
+        inherit: light2
+      light4:
+        inherit: light1
+  0035 - Empty chairs, empty tables:
+    default_trans: 10
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          tilt: TILT_HIGH
+          red: RED
+          blue: RED
+          green: RED
+          bright: MEDIUM_BRIGHT
+      light2:
+        values:
+          red: WHITE
+          blue: WHITE
+          green: WHITE
+          bright: MEDIUM_BRIGHT
+      light3:
+        inherit: light2
+      light4:
+        inherit: light1
+  0035a - Empty chairs, empty tables:
+    default_trans: 5
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          red: BLUE
+          blue: BLUE
+          green: BLUE
+          bright: MEDIUM_BRIGHT
+      light2:
+        values:
+          red: WHITE
+          blue: WHITE
+          green: WHITE
+          bright: MEDIUM_BRIGHT
+      light3:
+        inherit: light2
+      light4:
+        inherit: light1
+  0036 - A heart full of love:
+    default_trans: 10
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          tilt: TILT_MID
+          red: ORANGE
+          blue: ORANGE
+          green: ORANGE
+          bright: MEDIUM_BRIGHT
+      light2:
+        values:
+          red: WHITE
+          blue: WHITE
+          green: WHITE
+          bright: LOW_BRIGHT
+      light3:
+        inherit: light2
+      light4:
+        inherit: light1
+  0037 - Wedding Day Peal:
+    default_trans: 10
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          red: BLUE
+          blue: BLUE
+          green: BLUE
+          bright: MEDIUM_BRIGHT
+      light2:
+        values:
+          red: WHITE
+          blue: WHITE
+          green: WHITE
+          bright: MEDIUM_BRIGHT
+      light3:
+        inherit: light2
+      light4:
+        inherit: light1
+  0038 - Baron and Baroness:
+    default_trans: 5
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          tilt: TILT_MID
+          red: ORANGE
+          blue: ORANGE
+          green: ORANGE
+          bright: MEDIUM_BRIGHT
+      light2:
+        values:
+          red: WHITE
+          blue: WHITE
+          green: WHITE
+          bright: MEDIUM_BRIGHT
+      light3:
+        inherit: light2
+      light4:
+        inherit: light1
+  0039 - Wedding Night Prayer:
+    default_trans: 10
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          red: BLUE
+          blue: BLUE
+          green: BLUE
+          bright: MEDIUM_BRIGHT
+      light2:
+        values:
+          red: ORANGE
+          blue: ORANGE
+          green: ORANGE
+          bright: MEDIUM_BRIGHT
+      light3:
+        inherit: light2
+      light4:
+        inherit: light1
+  0040 - Confession:
+    default_trans: 5
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          red: BLUE
+          blue: BLUE
+          green: BLUE
+          bright: MEDIUM_BRIGHT
+      light2:
+        values:
+          red: ORANGE
+          blue: ORANGE
+          green: ORANGE
+          bright: MEDIUM_BRIGHT
+      light3:
+        inherit: light2
+      light4:
+        inherit: light1
+  0040a - Confession:
+    default_trans: 10
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          red: BLUE
+          blue: BLUE
+          green: BLUE
+          bright: LOW_BRIGHT
+      light2:
+        values:
+          red: BLUE_WHITE
+          blue: BLUE_WHITE
+          green: BLUE_WHITE
+          bright: LOW_BRIGHT
+      light3:
+        inherit: light2
+      light4:
+        inherit: light1
+  0041 - Do you hear the people sing:
+    default_trans: 10
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          red: YELLOW
+          blue: YELLOW
+          green: YELLOW
+          bright: MAX_BRIGHT
+      light2:
+        inherit: light1
+      light3:
+        inherit: light1
+      light4:
+        inherit: light1
+  0041a - Do you hear the people sing (France):
+    default_trans: 10
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          tilt: TILT_HIGH
+          red: BLUE
+          blue: BLUE
+          green: BLUE
+          bright: MAX_BRIGHT
+      light2:
+        values:
+          red: WHITE
+          blue: WHITE
+          green: WHITE
+          bright: MAX_BRIGHT
+      light3:
+        inherit: light2
+      light4:
+        values:
+          tilt: TILT_HIGH
+          red: RED
+          blue: RED
+          green: RED
+          bright: MAX_BRIGHT
+  0041b - Do you hear the people sing (FTB):
+    default_trans: 5
+    inherit: 0000 - black
+  0090a - Testing:
+    default_trans: 0
+    inherit: 0000 - black
+    fixtures:
+      light1:
+        values:
+          bright: {'mode': 'max', 'type': 'wave', 'amp': .5, 'name': 'battle', 'filename': '/home/psav/tmp/pyola/lescannon2.wav', 'master': True}
+          red: RED
+          blue: RED
+          green: RED
+          tilt: {'type': 'sin', 'freq': .3, 'amp': 40, 'initial': TILT_CENTER}
+          pan: {'type': 'cos', 'freq': .8, 'amp': 180, 'initial': 0}
